@@ -1,0 +1,65 @@
+main {
+  --space-lr: 40px;
+  --space-gap: 20px;
+  --col-count: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr repeat(
+      var(--col-count),
+      calc(
+        (
+            min(100% - var(--space-lr), 60rem) - (var(--col-count) - 1) *
+              var(--space-gap)
+          ) / var(--col-count)
+      )
+    )
+    1fr;
+  gap: var(--space-gap);
+
+  @media (width >= 43.75em) {
+    /* 700px */
+    --space-lr: 80px;
+    --col-count: 6;
+  }
+
+  @media (width >= 62.5em) {
+    /* 1000px */
+    --space-gap: 30px;
+    --col-count: 12;
+  }
+}
+
+.blue {
+  grid-column: 2/-2;
+
+  background-color: blue;
+
+  @media (width >= 43.75em) {
+    /* 700px */
+    grid-column: 2/5;
+  }
+
+  @media (width >= 62.5em) {
+    /* 1000px */
+    grid-column: 2/8;
+  }
+}
+
+.red {
+  grid-column: 2/-1;
+  background-color: red;
+
+  @media (width >= 43.75em) {
+    /* 700px */
+
+    grid-column: 5/-1;
+  }
+
+  @media (width >= 62.5em) {
+    /* 1000px */
+
+    grid-column: 8/-1;
+  }
+}
