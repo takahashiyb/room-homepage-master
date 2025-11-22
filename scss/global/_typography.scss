@@ -1,4 +1,5 @@
 @use "../util/" as u;
+@use "sass:map" as map;
 
 h1,
 h2,
@@ -9,15 +10,20 @@ h4 {
 }
 
 h1 {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(36), u.rem(48));
+  @include u.fs-fluid(
+    u.rem(320),
+    u.rem(1200),
+    map.get(u.$typographies, text-preset-1, font-size),
+    u.rem(48)
+  );
 }
 
 h2 {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(28), u.rem(36));
+  @include u.fs-fluid(u.rem(320), u.rem(1200), u.rem(28), u.rem(36));
 }
 
 p {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(16), u.rem(18));
+  @include u.fs-fluid(u.rem(320), u.rem(1200), u.rem(16), u.rem(18));
   line-height: 1.5;
 
   &.small {

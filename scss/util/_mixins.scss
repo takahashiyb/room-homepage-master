@@ -1,13 +1,12 @@
 @use "functions" as f;
 @use "sass:math";
 @use "sass:map" as map;
+@use "fonts" as t;
 
 // Based on: https://chriskirknielsen.com/blog/modern-fluid-typography-with-clamp/
 @mixin fs-fluid($min-vw, $max-vw, $min-value, $max-value) {
   $factor: math.div(1, ($max-vw - $min-vw)) * ($max-value - $min-value);
-  $calc-value: unquote(
-    "#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }"
-  );
+  $calc-value: calc($min-value - $min-vw * $factor + 100vw * $factor);
 
   font-size: $min-value; // Fallback for older browsers
   font-size: clamp(
@@ -35,3 +34,53 @@ $breakpoints: (
     @content;
   }
 }
+
+$typographies: (
+  "text-preset-1": (
+    "font-family": t.$font1,
+    "font-weight": 600,
+    "font-size": f.rem(48),
+    "line-height": 0.9,
+    "letter-spacing": f.em(-2),
+  ),
+
+  "text-preset-2": (
+    "font-family": t.$font1,
+    "font-weight": 600,
+    "font-size": f.rem(40),
+    "line-height": 1,
+    "letter-spacing": f.em(-2),
+  ),
+
+  "text-preset-3-bold": (
+    "font-family": t.$font1,
+    "font-weight": 700,
+    "font-size": f.rem(16),
+    "line-height": 1.4,
+    "letter-spacing": f.em(7),
+  ),
+
+  "text-preset-3-semibold": (
+    "font-family": t.$font1,
+    "font-weight": 600,
+    "font-size": f.rem(16),
+    "line-height": 1,
+    "letter-spacing": f.em(-0.7),
+  ),
+
+  "text-preset-3-medium": (
+    "font-family": t.$font1,
+    "font-weight": 500,
+    "font-size": f.rem(16),
+    "line-height": 1.4,
+    "letter-spacing": f.em(-0.5),
+  ),
+
+  "text-preset-4": (
+    "font-family": t.$font1,
+    "font-weight": 500,
+    "font-size": f.rem(15),
+    "line-height": 1,
+    "letter-spacing": f.em(12.5),
+  ),
+);

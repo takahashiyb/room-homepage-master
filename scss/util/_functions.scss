@@ -15,3 +15,11 @@
     @error 'Don\'t use units when using the em() function; only numbers.';
   }
 }
+
+@function unitless($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16);
+  } @else {
+    @error 'Don\'t use units when using the unitless() function; only numbers.';
+  }
+}

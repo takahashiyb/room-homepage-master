@@ -35,3 +35,57 @@
   inspires you. Find the furniture pieces you need, from traditional to contemporary styles
   or anything in between. Product specialists are available to help you create your dream space.
   
+
+
+
+  Most basic design:
+
+  header
+  the background here is actually the hero image card 
+  mobile:
+    has hamburger menu left justify of the center logo
+  d:
+    hamburger is gone and changed to navbar
+    it is now to the right justify item of the logo
+    and both are justified content to the left.
+  
+  hero section:
+  hero image card and text card:
+  the page does not have a margin.
+  this part is a carousel that changes both the image and the text.
+
+  Make a left right button for both image and text then hide depending on the view width
+
+  header
+  image is above the text, with buttons to the lower right corner
+  text has h2 and p then a (shop now)
+
+  d: 
+  now the image is to the left of the text and has no more buttons.
+  the text now has the button at the bottom left of its div and the rest is at the center with the same formation
+
+  About section:
+  this will contain the h1
+
+  mobile
+  image1 on top
+  text including h1 then p
+  image2 on bottom
+  d:
+
+  image1 on left
+  text contents will have the same arrangement
+  image2 on right
+
+  dialog:
+  only for mobile and tablets
+  justify space between has margins
+
+Interactivity:
+  nav links are hoverable with underlines
+
+  next back button in hero section changes color 
+
+  shop now link changes color whne hovered
+
+  hamburger button opens dialog
