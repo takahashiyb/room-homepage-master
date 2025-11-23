@@ -10,3 +10,9 @@
     filter: brightness(100);
   }
 }
+
+.button-nb:hover,
+.button-nb:active,
+.button-nb:focus {
+  background-color: var(--gray-800);
+}
