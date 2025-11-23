@@ -23,6 +23,8 @@ h2 {
 }
 
 p {
+  color: var(--gray-500);
+
   @include u.fs-typography-switching(
     "text-preset-3-medium",
     "text-preset-3-medium"
@@ -40,11 +42,12 @@ a {
 }
 
 .header nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  text-transform: lowercase;
+
   @include u.fs-typography-switching(
     "text-preset-3-semibold",
     "text-preset-3-semibold"
   );
-  color: var(--white);
-  text-decoration: none;
-  text-transform: lowercase;
 }
