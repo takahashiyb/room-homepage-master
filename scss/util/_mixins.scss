@@ -16,11 +16,35 @@
   );
 }
 
+@mixin fs-typography-switching($small-preset, $large-preset) {
+  $map-small: map.get($typographies, $small-preset);
+  $map-large: map.get($typographies, $large-preset);
+
+  font-family: map.get($map-small, font-family);
+  font-weight: map.get($map-small, font-weight);
+  line-height: map.get($map-small, line-height);
+  letter-spacing: map.get($map-small, letter-spacing);
+
+  @include fs-fluid(
+    f.rem(320),
+    map.get($breakpoints, large),
+    map.get($map-small, font-size),
+    map.get($map-large, font-size)
+  );
+
+  @include breakpoint(large) {
+    font-family: map.get($map-large, font-family);
+    font-weight: map.get($map-large, font-weight);
+    line-height: map.get($map-large, line-height);
+    letter-spacing: map.get($map-large, letter-spacing);
+  }
+}
+
 // 700px, 900px, >1440px
 $breakpoints: (
-  "medium": f.em(700),
-  "large": f.em(900),
-  "xlarge": f.em(1440),
+  "medium": f.rem(700),
+  "large": f.rem(840),
+  "xlarge": f.rem(1440),
 );
 
 @mixin breakpoint($size) {
@@ -41,7 +65,7 @@ $typographies: (
     "font-weight": 600,
     "font-size": f.rem(48),
     "line-height": 0.9,
-    "letter-spacing": f.em(-2),
+    "letter-spacing": f.em(0),
   ),
 
   "text-preset-2": (
@@ -49,7 +73,7 @@ $typographies: (
     "font-weight": 600,
     "font-size": f.rem(40),
     "line-height": 1,
-    "letter-spacing": f.em(-2),
+    "letter-spacing": f.em(0),
   ),
 
   "text-preset-3-bold": (

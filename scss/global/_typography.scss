@@ -4,43 +4,47 @@
 h1,
 h2,
 h3,
-h4 {
+p {
   margin: 0;
   line-height: 1.1;
 }
 
 h1 {
-  @include u.fs-fluid(
-    u.rem(320),
-    u.rem(1200),
-    map.get(u.$typographies, text-preset-1, font-size),
-    u.rem(48)
+  text-transform: uppercase;
+
+  @include u.fs-typography-switching(
+    "text-preset-3-bold",
+    "text-preset-3-bold"
   );
 }
 
 h2 {
-  @include u.fs-fluid(u.rem(320), u.rem(1200), u.rem(28), u.rem(36));
+  @include u.fs-typography-switching("text-preset-2", "text-preset-1");
 }
 
 p {
-  @include u.fs-fluid(u.rem(320), u.rem(1200), u.rem(16), u.rem(18));
-  line-height: 1.5;
-
-  &.small {
-    font-size: u.rem(13);
-  }
+  @include u.fs-typography-switching(
+    "text-preset-3-medium",
+    "text-preset-3-medium"
+  );
 }
 
 a {
-  text-decoration: none;
+  @include u.fs-typography-switching("text-preset-4", "text-preset-4");
 }
 
-p > a {
-  color: var(--color-text);
-  text-decoration: underline;
-  transition: color 150ms ease-in-out;
+.text__shop a {
+  color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
+}
 
-  &:hover {
-    color: var(--color-accent);
-  }
+.header nav ul li a {
+  @include u.fs-typography-switching(
+    "text-preset-3-semibold",
+    "text-preset-3-semibold"
+  );
+  color: var(--white);
+  text-decoration: none;
+  text-transform: lowercase;
 }

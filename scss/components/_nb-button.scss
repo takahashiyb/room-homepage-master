@@ -1,0 +1,12 @@
+.button {
+  background-color: var(--black);
+  border: none;
+  aspect-ratio: 1;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  img {
+    filter: brightness(100);
+  }
+}

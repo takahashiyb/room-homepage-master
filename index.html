@@ -19,6 +19,8 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="./dist/style.css" />
+
     <title>Frontend Mentor | Room homepage</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -33,11 +35,88 @@
     </style>
   </head>
   <body>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+    <div class="grid grid__body">
+      <section class="section__hero">
+        <div class="grid__hero">
+          <div class="image__hero">
+            <img
+              src="./images/desktop-image-hero-1.jpg"
+              alt="protraying a cozy image with sunline coming in from an off screen window basking the bonsai tree on top of a table and the chairs that come with it"
+            />
+          </div>
+          <header>
+            <div class="header">
+              <button class="button__hamburger">
+                <img
+                  src="./images/icon-hamburger.svg"
+                  alt="icon hamburger button"
+                />
+              </button>
+
+              <div class="image-logo">
+                <img src="./images/logo.svg" alt="image company" />
+              </div>
+
+              <nav>
+                <ul>
+                  <li><a href="#home">home</a></li>
+                  <li><a href="#shop">shop</a></li>
+                  <li><a href="#about">about</a></li>
+                  <li><a href="#contact">contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+        </div>
+      </section>
+      <section class="section__next-back">
+        <div class="buttons__next-back">
+          <button class="button button__back">
+            <img src="./images/icon-angle-left.svg" alt="icon left button" />
+          </button>
+          <button class="button button__next">
+            <img src="./images/icon-angle-right.svg" alt="icon right button" />
+          </button>
+        </div>
+      </section>
+      <section class="section__quality">
+        <div class="grid__quality">
+          <div class="text text__description">
+            <h2>Discover innovative ways to decorate</h2>
+            <p>
+              We provide unmatched quality, comfort, and style for property
+              owners across the country. Our experts combine form and function
+              in bringing your vision to life. Create a room in your own style
+              with our collection and make your property a reflection of you and
+              what you love.
+            </p>
+          </div>
+
+          <div class="text text__shop">
+            <a href="#Shop Now">Shop Now</a>
+            <img src="./images/icon-arrow.svg" alt="arrow icon" />
+          </div>
+        </div>
+      </section>
+      <div class="image image__left">
+        <img src="./images/image-about-dark.jpg" alt="" />
+      </div>
+      <section class="section__about">
+        <div class="grid__about">
+          <h1>About our furniture</h1>
+          <p>
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </p>
+        </div>
+      </section>
+      <div class="image image__right">
+        <img src="./images/image-about-light.jpg" alt="" />
+      </div>
     </div>
   </body>
 </html>
