@@ -151,6 +151,7 @@
     column-gap: var(--spacing-0400);
 
     @include u.breakpoint(medium) {
+      justify-self: start;
       justify-content: start;
       align-self: start;
       align-items: center;

@@ -1,0 +1,10 @@
+.text__shop:hover,
+.text__shop:active,
+.text__shop:focus {
+  a {
+    color: var(--gray-500);
+  }
+  img {
+    filter: invert(1) brightness(0.6);
+  }
+}
