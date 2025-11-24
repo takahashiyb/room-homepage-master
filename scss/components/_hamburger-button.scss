@@ -1,12 +1,5 @@
 .button__hamburger {
   background-color: transparent;
   border: none;
-}
-
-.button__hamburger:hover,
-.button__hamburger:active,
-.button__hamburger:focus {
-  img {
-    filter: invert(1) brightness(0);
-  }
+  cursor: pointer;
 }

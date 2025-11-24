@@ -1,3 +1,9 @@
+.text__shop {
+  a {
+    outline: none;
+  }
+}
+
 .text__shop:hover,
 .text__shop:active,
 .text__shop:focus {
@@ -7,4 +13,10 @@
   img {
     filter: invert(1) brightness(0.6);
   }
+}
+
+.text__shop a:hover,
+.text__shop a:active,
+.text__shop a:focus {
+  color: var(--gray-500);
 }

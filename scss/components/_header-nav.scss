@@ -1,3 +1,26 @@
-.header a {
-  color: var(--white);
+.header {
+  a {
+    position: relative;
+    color: var(--white);
+    outline: none;
+  }
+
+  a::after {
+    display: block;
+    content: "";
+    width: var(--spacing-0300);
+    height: 2px;
+    background-color: var(--white);
+    position: absolute;
+    right: 50%;
+    transform: scale(0.1);
+
+    transition: 0.3s transform;
+  }
+
+  a:hover::after,
+  a:active::after,
+  a:focus::after {
+    transform: scale(1) translate(50%);
+  }
 }
