@@ -31,26 +31,45 @@ export function nextBack() {
     },
   ];
 
-  buttonNext.addEventListener("click", () => {
-    const index = buttonNB.dataset.index;
-    if (parseFloat(index) + 1 > 2) {
-      buttonNB.dataset.index = 0;
-    } else {
-      buttonNB.dataset.index++;
-    }
-    updateDisplay("Next");
-  });
+  const buttonEvents = ["click", "keydown"];
 
-  buttonBack.addEventListener("click", () => {
-    const index = buttonNB.dataset.index;
-    if (parseFloat(index) - 1 < 0) {
-      buttonNB.dataset.index = 2;
-    } else {
-      buttonNB.dataset.index--;
-    }
+  buttonEvents.forEach((buttonEvent) =>
+    buttonNext.addEventListener(buttonEvent, (event) => {
+      if (
+        event.code === "Enter" ||
+        event.code === "Space" ||
+        event.type === "click"
+      ) {
+        const index = buttonNB.dataset.index;
+        if (parseFloat(index) + 1 > 2) {
+          buttonNB.dataset.index = 0;
+        } else {
+          buttonNB.dataset.index++;
+        }
+        updateDisplay("Next");
+      }
+    })
+  );
 
-    updateDisplay("Back");
-  });
+  buttonEvents.forEach((buttonEvent) =>
+    buttonBack.addEventListener(buttonEvent, (event) => {
+      if (
+        event.code === "Enter" ||
+        event.code === "Space" ||
+        event.type === "click"
+      ) {
+        const index = buttonNB.dataset.index;
+
+        if (parseFloat(index) - 1 < 0) {
+          buttonNB.dataset.index = 2;
+        } else {
+          buttonNB.dataset.index--;
+        }
+
+        updateDisplay("Back");
+      }
+    })
+  );
 
   const updateDisplay = async (direction) => {
     const index = buttonNB.dataset.index;
