@@ -3,6 +3,7 @@ export function nextBack() {
   const buttonNext = document.querySelector(".button__next");
   const buttonBack = document.querySelector(".button__back");
   const imageTarget = document.querySelector(".image__display");
+  const textTarget = document.querySelector(".text__description");
   const titleTarget = document.querySelector("h2");
   const descriptionTarget = document.querySelector(".description__target");
 
@@ -37,7 +38,7 @@ export function nextBack() {
     } else {
       buttonNB.dataset.index++;
     }
-    updateDisplay();
+    updateDisplay("Next");
   });
 
   buttonBack.addEventListener("click", () => {
@@ -48,14 +49,32 @@ export function nextBack() {
       buttonNB.dataset.index--;
     }
 
-    updateDisplay();
+    updateDisplay("Back");
   });
 
-  function updateDisplay() {
+  const updateDisplay = async (direction) => {
     const index = buttonNB.dataset.index;
+
+    switching("Out", direction, imageTarget);
+    await switching("Out", direction, textTarget);
+
     imageTarget.setAttribute("src", list[index].directory);
     imageTarget.setAttribute("alt", list[index].alt);
+
     titleTarget.textContent = list[index].title;
     descriptionTarget.textContent = list[index].description;
+
+    switching("In", direction, imageTarget);
+    await switching("In", direction, textTarget);
+  };
+
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function switching(placement, direction, element) {
+    element.classList.add(`switch${placement}${direction}`);
+    await wait(400);
+    element.classList.remove(`switch${placement}${direction}`);
   }
 }

@@ -1,0 +1,50 @@
+.image__display {
+  transform: scaleX(1) scaleY(1) translate(0);
+  transition: 0.4s transform;
+
+  &.switchOutBack {
+    transform: translate(-55%) scaleX(0.001) scaleY(0.5);
+  }
+
+  &.switchInBack {
+    transform: translate(55%) scaleX(0.001) scaleY(0.5);
+    transition: 0s transform;
+  }
+
+  &.switchOutNext {
+    transform: translate(+55%) scaleX(0.001) scaleY(0.5);
+  }
+
+  &.switchInNext {
+    transform: translate(-55%) scaleX(0.001) scaleY(0.5);
+    transition: 0s transform;
+  }
+}
+
+.text__description {
+  transform: translate(0);
+  opacity: 1;
+  transition: 0.4s;
+
+  &.switchOutBack {
+    transform: translate(-100%);
+    opacity: 0;
+  }
+
+  &.switchInBack {
+    transform: translate(105%);
+    opacity: 0;
+    transition: 0s transform;
+  }
+
+  &.switchOutNext {
+    transform: translate(+100%);
+    opacity: 0;
+  }
+
+  &.switchInNext {
+    transform: translate(-105%);
+    opacity: 0;
+    transition: 0s transform;
+  }
+}
