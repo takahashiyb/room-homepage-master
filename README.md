@@ -48,7 +48,7 @@ Your users should be able to:
 
 ### What I learned
 
-This is my first time working on transitions intentionally, I knew about transitions before but only to smooth out properties that are changed but now I undestand a lot more about it for its decorative purpose.
+This is my first time working on transitions intentionally, I knew about transitions before but only to smooth out properties that are changed but now I understand a lot more about it for its decorative purpose.
 
 I understand the SCSS way of doing things better, and have created a mixin for fonts in a FrontEnd Mentor way along with a function to switch all these mixins depending on screensizes.
 
