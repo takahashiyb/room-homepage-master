@@ -1,0 +1,48 @@
+@use "../util/" as u;
+.dialog {
+  position: fixed;
+  inset: 0; /* full viewport */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent backdrop */
+  z-index: 9999;
+  padding: 0;
+}
+
+.dialog__nav {
+  background: white;
+  z-index: 10000;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  padding-inline: 5%;
+}
+
+.container__button-close {
+  grid-column: 1;
+
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+.dialog nav {
+  grid-column: -1;
+  justify-self: end;
+  ul {
+    list-style: none;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    gap: var(--spacing-0400);
+
+    a {
+      color: var(--black);
+    }
+  }
+}

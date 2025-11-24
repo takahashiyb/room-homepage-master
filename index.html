@@ -35,11 +35,38 @@
     </style>
   </head>
   <body>
+    <dialog class="dialog" open>
+      <div class="dialog__nav">
+        <div class="container__button-close">
+          <button class="button__close">
+            <img src="./images/icon-close.svg" alt="icon close" />
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#home">home</a>
+            </li>
+            <li>
+              <a href="#shop">shop</a>
+            </li>
+            <li>
+              <a href="#about">about</a>
+            </li>
+            <li>
+              <a href="#contact">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="overlay"></div>
+    </dialog>
     <div class="grid grid__body">
       <section class="section__hero">
         <div class="grid__hero">
           <div class="image__hero">
             <img
+              class="image__display"
               src="./images/desktop-image-hero-1.jpg"
               alt="protraying a cozy image with sunline coming in from an off screen window basking the bonsai tree on top of a table and the chairs that come with it"
             />
@@ -73,7 +100,7 @@
         <div class="grid__quality">
           <div class="text text__description">
             <h2>Discover innovative ways to decorate</h2>
-            <p>
+            <p class="description__target">
               We provide unmatched quality, comfort, and style for property
               owners across the country. Our experts combine form and function
               in bringing your vision to life. Create a room in your own style
@@ -89,7 +116,7 @@
         </div>
       </section>
       <section class="section__next-back">
-        <div class="buttons__next-back">
+        <div class="buttons__next-back" data-index="0">
           <button class="button-nb button__back">
             <img src="./images/icon-angle-left.svg" alt="icon left button" />
           </button>
@@ -119,5 +146,6 @@
         <img src="./images/image-about-light.jpg" alt="" />
       </div>
     </div>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>
